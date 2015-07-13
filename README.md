@@ -19,13 +19,13 @@ To compile this plugin, you need:
 
         cmake -DLIBDATAHEAP_LIBRARIES=/path/to/libdataheap.a -DLIBDATAHEAP_INCLUDE_DIRS=/path/to/dataheap/include
 
-> *Note:*
-
-> If you have `scorep-config` in your `PATH`, it should be found by CMake.
-
 2. Invoke make
 
         make
+        
+> *Note:*
+
+> If you have `scorep-config` in your `PATH`, it should be found by CMake.
 
 ###Installation
 
@@ -54,9 +54,9 @@ You have to add the list of the metric channel you are interested in to the envi
 
 For example:
 
-        export SCOREP_METRIC_PLUGINS="dataheap_plugin"
-        export SCOREP_METRIC_DATAHEAP_PLUGIN="rover/watts"
-        export SCOREP_METRIC_DATAHEAP_SERVER="dataheap.my.institute.edu:22222"
+    export SCOREP_METRIC_PLUGINS="dataheap_plugin"
+    export SCOREP_METRIC_DATAHEAP_PLUGIN="rover/watts"
+    export SCOREP_METRIC_DATAHEAP_SERVER="dataheap.my.institute.edu:22222"
 
 > *Note:*
 
