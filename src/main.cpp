@@ -215,7 +215,7 @@ SCOREP_Metric_Plugin_MetricProperties* get_event_info(char* raw_counter)
 {
     std::vector<SCOREP_Metric_Plugin_MetricProperties> metric_properties;
 
-    add_metric_property(metric_properties, replace_localhost(raw_counter));
+    add_metric_property(metric_properties, raw_counter);
 
     add_empty_property(metric_properties);
 
