@@ -15,14 +15,23 @@ To compile this plugin, you need:
 
 ###Building
 
-1. Invoke CMake
+1. Create a build directory
+
+        mkdir build
+        cd build
+
+2. Invoke CMake
 
         cmake -DLIBDATAHEAP_LIBRARIES=/path/to/libdataheap.a -DLIBDATAHEAP_INCLUDE_DIRS=/path/to/dataheap/include
 
-2. Invoke make
+3. Invoke make
 
         make
-        
+
+4. Copy it to a location listed in `LD_LIBRARY_PATH` or add current path to `LD_LIBRARY_PATH` with
+
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`
+
 > *Note:*
 
 > If you have `scorep-config` in your `PATH`, it should be found by CMake.
@@ -65,7 +74,7 @@ For example:
 
 ###Environment variables
 
-* `DATAHEAP_METRIC_SERVER`
+* `SCOREP_METRIC_DATAHEAP_SERVER`
 
     Defines hostname and port of your dataheap installation.
 
