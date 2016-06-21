@@ -26,6 +26,52 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <dataheap_plugin.hpp>
+#pragma once
 
-SCOREP_METRIC_PLUGIN_CLASS(dataheap_plugin, "dataheap")
+#include <dataheap/timeline.hpp>
+
+#include <string>
+
+namespace dataheap
+{
+
+class dataheap;
+
+class channel
+{
+public:
+    channel(dataheap& dh, const std::string& name, const std::string& desc, const std::string& unit)
+    : dh_(dh), name_(name), desc_(desc), unit_(unit)
+    {
+    }
+
+    ~channel();
+
+    const std::string& name() const
+    {
+        return name_;
+    }
+
+    const std::string& description() const
+    {
+        return desc_;
+    }
+
+    const std::string& unit() const
+    {
+        return unit_;
+    }
+
+public:
+    void subscribe();
+    timeline unsubscribe();
+
+private:
+    dataheap& dh_;
+    std::string name_;
+    std::string desc_;
+    std::string unit_;
+    uint64_t handle_;
+    bool subscribed_ = false;
+};
+}

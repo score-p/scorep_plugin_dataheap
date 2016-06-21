@@ -26,6 +26,41 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <dataheap_plugin.hpp>
+#pragma once
 
-SCOREP_METRIC_PLUGIN_CLASS(dataheap_plugin, "dataheap")
+#include <dataheap/channel.hpp>
+#include <dataheap/interface.hpp>
+
+#include <scorep/exception.hpp>
+
+#include <set>
+#include <string>
+
+namespace dataheap
+{
+
+class dataheap
+{
+public:
+    dataheap() = default;
+    dataheap(const std::string& server, int port);
+    ~dataheap();
+
+public:
+    void connect(const std::string& server, int port);
+    void disconnect();
+    bool connected() const;
+
+public:
+    bool is_available(const std::string& channel) const;
+    channel find_channel(const std::string& name);
+
+public:
+    friend channel;
+
+private:
+    dataheap_connection* connection_;
+    bool connected_ = false;
+    std::set<std::string> available_channels_;
+};
+}

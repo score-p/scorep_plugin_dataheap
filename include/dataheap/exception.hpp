@@ -26,6 +26,19 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <dataheap_plugin.hpp>
+#pragma once
 
-SCOREP_METRIC_PLUGIN_CLASS(dataheap_plugin, "dataheap")
+#include <scorep/exception.hpp>
+
+namespace dataheap
+{
+class connection_error : public std::runtime_error
+{
+    using base = std::runtime_error;
+
+public:
+    connection_error(const std::string& what) : base(what)
+    {
+    }
+};
+}

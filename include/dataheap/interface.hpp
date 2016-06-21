@@ -26,6 +26,23 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <dataheap_plugin.hpp>
+#pragma once
 
-SCOREP_METRIC_PLUGIN_CLASS(dataheap_plugin, "dataheap")
+#include <cstdint>
+
+// NOTE: You don't read further in this file. *Jedi hand move*
+//       You're still reading... well, you've been warned. The reason I have to do these forwards
+//       myself here, is, that the include file dataheap.h is FUBAR. You simply can't include it
+//       from C++ code. There you go.
+
+extern "C" {
+
+struct per_connection_settings;
+typedef struct per_connection_settings dataheap_connection;
+
+typedef struct dataheap_time_line_entry_t dataheap_time_line_entry;
+
+typedef struct dataheap_time_line_t dataheap_time_line;
+
+// You haven't seen anything
+}
