@@ -1,8 +1,8 @@
-#Score-P Dataheap Event Plugin
+# Score-P Dataheap Event Plugin
 
-##Compilation and Installation
+## Compilation and Installation
 
-###Prerequisites
+### Prerequisites
 
 To compile this plugin, you need:
 
@@ -13,7 +13,7 @@ To compile this plugin, you need:
 * The Dataheap library and header files for `libdataheap`. The Dataheap libraries and `libdataheap`
     are available at <https://fusionforge.zih.tu-dresden.de/projects/dataheap>.
 
-###Building
+### Building
 
 1. Create a build directory
 
@@ -36,7 +36,7 @@ To compile this plugin, you need:
 
 > If you have `scorep-config` in your `PATH`, it should be found by CMake.
 
-###Installation
+### Installation
 
 1. Set the installation prefix
 
@@ -50,7 +50,7 @@ To compile this plugin, you need:
 
 > Make sure to add the subfolder `lib` to your `LD_LIBRARY_PATH`.
 
-##Usage
+## Usage
 
 To add a dataheap metric to your trace, you have to add `dataheap_plugin` to the environment
 variable `SCOREP_METRIC_PLUGINS`.
@@ -72,7 +72,7 @@ For example:
 > The plugin replaces the first instance of `localhost` in any metric name with the hostname of the
 > executing machine.
 
-###Environment variables
+### Environment variables
 
 * `SCOREP_METRIC_DATAHEAP_SERVER`
 
@@ -82,7 +82,7 @@ For example:
 
     Defines a counter on your dataheap server.
 
-###If anything fails:
+### If anything fails:
 
 1. Check whether the plugin library can be loaded from the `LD_LIBRARY_PATH`.
 
@@ -90,6 +90,6 @@ For example:
 
 3. Write a mail to the author.
 
-##Authors
+## Authors
 
 * Mario Bielert (mario.bielert at tu-dresden dot de)
